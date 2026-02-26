@@ -1,0 +1,98 @@
+"use client";
+
+import { useState } from "react";
+
+export default function BezwaarStartPage() {
+  const [bestuursorgaan, setBestuursorgaan] = useState("");
+  const [zaaknummer, setZaaknummer] = useState("");
+  const [datumBesluit, setDatumBesluit] = useState("");
+  const [verzoek, setVerzoek] = useState("");
+  const [argumenten, setArgumenten] = useState("");
+
+  const conceptBrief = `
+Aan: ${bestuursorgaan}
+
+Betreft: Bezwaar tegen besluit d.d. ${datumBesluit}
+Kenmerk: ${zaaknummer}
+
+Geacht bestuursorgaan,
+
+Hierbij maak ik bezwaar tegen het besluit van ${datumBesluit} met kenmerk ${zaaknummer}.
+
+Ik verzoek u het besluit te heroverwegen.
+
+Mijn belangrijkste argumenten zijn:
+${argumenten}
+
+Op grond hiervan verzoek ik u het besluit te herzien.
+
+Met vriendelijke groet,
+
+[Naam]
+`;
+
+  return (
+    <div className="min-h-screen bg-white text-black px-6 py-16">
+      <div className="max-w-3xl mx-auto space-y-10">
+        <h1 className="text-3xl font-bold">Bezwaar intake</h1>
+
+        <div className="space-y-6">
+          <div>
+            <label className="block font-medium">Bestuursorgaan</label>
+            <input
+              className="w-full border rounded p-2 mt-1"
+              value={bestuursorgaan}
+              onChange={(e) => setBestuursorgaan(e.target.value)}
+            />
+          </div>
+
+          <div>
+            <label className="block font-medium">Zaaknummer / kenmerk</label>
+            <input
+              className="w-full border rounded p-2 mt-1"
+              value={zaaknummer}
+              onChange={(e) => setZaaknummer(e.target.value)}
+            />
+          </div>
+
+          <div>
+            <label className="block font-medium">Datum van het besluit</label>
+            <input
+              type="date"
+              className="w-full border rounded p-2 mt-1"
+              value={datumBesluit}
+              onChange={(e) => setDatumBesluit(e.target.value)}
+            />
+          </div>
+
+          <div>
+            <label className="block font-medium">Wat wil je bereiken?</label>
+            <textarea
+              className="w-full border rounded p-2 mt-1"
+              rows={3}
+              value={verzoek}
+              onChange={(e) => setVerzoek(e.target.value)}
+            />
+          </div>
+
+          <div>
+            <label className="block font-medium">Belangrijkste argumenten</label>
+            <textarea
+              className="w-full border rounded p-2 mt-1"
+              rows={5}
+              value={argumenten}
+              onChange={(e) => setArgumenten(e.target.value)}
+            />
+          </div>
+        </div>
+
+        <div className="border-t pt-8">
+          <h2 className="text-2xl font-semibold mb-4">Conceptbrief</h2>
+          <pre className="whitespace-pre-wrap bg-gray-100 p-4 rounded text-sm">
+            {conceptBrief}
+          </pre>
+        </div>
+      </div>
+    </div>
+  );
+}

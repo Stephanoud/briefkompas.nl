@@ -33,10 +33,10 @@ Met vriendelijke groet,
 
   return (
     <div className="min-h-screen bg-white text-black px-6 py-16">
-      <div className="max-w-3xl mx-auto space-y-10">
+      <div className="max-w-3xl mx-auto space-y-8">
         <h1 className="text-3xl font-bold">Bezwaar intake</h1>
 
-        <div className="space-y-6">
+        <div className="space-y-4">
           <div>
             <label className="block font-medium">Bestuursorgaan</label>
             <input
@@ -47,7 +47,7 @@ Met vriendelijke groet,
           </div>
 
           <div>
-            <label className="block font-medium">Zaaknummer / kenmerk</label>
+            <label className="block font-medium">Zaaknummer</label>
             <input
               className="w-full border rounded p-2 mt-1"
               value={zaaknummer}
@@ -56,7 +56,7 @@ Met vriendelijke groet,
           </div>
 
           <div>
-            <label className="block font-medium">Datum van het besluit</label>
+            <label className="block font-medium">Datum besluit</label>
             <input
               type="date"
               className="w-full border rounded p-2 mt-1"
@@ -86,8 +86,8 @@ Met vriendelijke groet,
           </div>
         </div>
 
-        <div className="border-t pt-8">
-          <h2 className="text-2xl font-semibold mb-4">Conceptbrief</h2>
+        <div className="border-t pt-6">
+          <h2 className="text-xl font-semibold mb-3">Conceptbrief</h2>
           <pre className="whitespace-pre-wrap bg-gray-100 p-4 rounded text-sm">
             {conceptBrief}
           </pre>

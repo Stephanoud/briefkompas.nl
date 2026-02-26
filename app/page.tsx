@@ -1,3 +1,4 @@
+import Link from "next/link";
 export default function Home() {
   return (
     <div className="min-h-screen bg-white text-black flex flex-col items-center justify-center px-6 py-20">
@@ -16,13 +17,19 @@ export default function Home() {
     </p>
 
 <div className="flex flex-col items-center gap-4">
-  <button className="bg-black text-white px-6 py-3 rounded-lg text-lg hover:bg-gray-800">
+<div className="flex flex-col items-center gap-4">
+  <Link
+    href="/bezwaar"
+    className="bg-black text-white px-6 py-3 rounded-lg text-lg hover:bg-gray-800"
+  >
     Start mijn bezwaar
-  </button>
+  </Link>
 
-  <button className="text-black underline hover:text-gray-600">
+  <Link href="/woo" className="text-black underline hover:text-gray-600">
     Of doe een WOO-verzoek
-  </button>
+  </Link>
+</div>
+
 </div>
 
   </div>

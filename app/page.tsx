@@ -15,9 +15,15 @@ export default function Home() {
       Geen juridisch advies. Wel een duidelijke, professioneel opgebouwde brief die serieus wordt genomen.
     </p>
 
-    <button className="bg-black text-white px-6 py-3 rounded-lg text-lg hover:bg-gray-800">
-      Start mijn bezwaar
-    </button>
+<div className="flex flex-col items-center gap-4">
+  <button className="bg-black text-white px-6 py-3 rounded-lg text-lg hover:bg-gray-800">
+    Start mijn bezwaar
+  </button>
+
+  <button className="text-black underline hover:text-gray-600">
+    Of doe een WOO-verzoek
+  </button>
+</div>
 
   </div>
 </div>
